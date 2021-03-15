@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.menuList {
+  float: left;
+  border-right-style: dotted;
+  padding: 5px;
+}
+.MenuSummary {
+  cursor: pointer;
+  text-align: left;
+}
