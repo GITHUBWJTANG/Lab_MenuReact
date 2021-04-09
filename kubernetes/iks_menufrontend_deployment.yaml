@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: menufrontenddeployment
+spec:
+  selector:
+    matchLabels:
+      app: menufrontend
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: menufrontend
+    spec:
+      containers:
+      - image: us.icr.io/iks_ttang/menufrontend:1.1
+        name: menufrontend
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000         
+      restartPolicy: Always
